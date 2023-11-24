@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
-import { Fine, data } from './data';
 import { Link } from 'react-router-dom';
+import { Fine, data } from '../data/data';
 
 function ResultsPage() {
     const [term, setTerm] = useState<string>('');
@@ -44,7 +44,7 @@ function ResultsPage() {
                             <p>Załącznik: {fine.attachment}</p> 
                             <p>Numer w taryfikatorze: {fine.number}</p>
                             <p>Opis: {fine.description}</p>
-                            <p>Grzywna: {fine.fine}</p>
+                            <p>Grzywna: {fine.fine}zł</p>
                             <p>Poziom naruszenia: {Array.isArray(fine.group) ? fine.group.join(', ') : fine.group}</p>
                             <br></br>
                         </div>
