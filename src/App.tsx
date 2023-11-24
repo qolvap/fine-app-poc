@@ -1,51 +1,23 @@
-import React, { useState, ChangeEvent } from 'react';
-import { Fine, data } from './data';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import ResultsPage from './components/ResultsPage';
 
 function App() {
-    const [term, setTerm] = useState<string>('');
-    const [filteredData, setFilteredData] = useState<Fine[]>([]);
-
-    /*
-    The parameter e is expected to be an event object of type ChangeEvent, 
-    where the event target is an <input> element. 
-    ChangeEvent<HTMLInputElement> syntax used to define the type of the parameter e in a function.
-    */
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setTerm(e.target.value);
-    };
-
-    const handleFilterButtonClick = () => {
-      /*
-      To prevent the error, first check if fine.description is defined before trying to call includes on it.
-      It makes sure that if term is undefined or null, it is treated as an empty string,
-      and the includes method won't throw an error.
-      */ 
-        const filtered = data.filter((fine) => fine.description?.includes(term || ''));
-        setFilteredData(filtered);
-        setTerm('');
-    };
-
     return (
-        <div className="App">
-            <header className="App-header">
-                <input type="text" placeholder="Wpisz hasło..." value={term} onChange={handleInputChange} />
-                <button onClick={handleFilterButtonClick}>Wyszukaj</button>
-                {filteredData.map((fine) => (
-                    <div key={fine.number}>
-                        <h3>Taryfikator {fine.guilty}</h3>
-                        <p>Opis: {fine.description}</p>
-                        <p>Grzywna: {fine.fine}</p>
-                        <p>Poziom naruszenia: {Array.isArray(fine.group) ? fine.group.join(', ') : fine.group}</p>
-                        <p>Załącznik: {fine.attachment}</p> 
-                        <p>Numer w taryfikatorze: {fine.number}</p>
-                        <br></br>
-                    </div>
-                ))}
-            </header>
-        </div>
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/Results" element={<ResultsPage />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
 
 export default App;
+
+
 
 
