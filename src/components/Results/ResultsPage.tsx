@@ -54,6 +54,7 @@ function ResultsPage() {
                 )}
             </header>
             <Link to="/">Powrót do strony głównej</Link>
+            <h3>Źródło: UOTD</h3>
         </div>
     );
 }
