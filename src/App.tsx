@@ -4,6 +4,7 @@ import HomePage from './components/Home/HomePage';
 import ResultsPage from './components/Results/ResultsPage';
 import Sidebar from './components/Sidebar/Sidebar';
 import { AppProvider } from './components/context/Context';
+import 'tailwindcss/tailwind.css';
 
 function App() {
   return (

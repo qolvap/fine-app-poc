@@ -12,21 +12,22 @@ const SidebarClosed: React.FC = () => {
   };
 
   return (
-    <aside className={`${isSideBarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
-      <div className='sidebar-header'>
-        <button className='close-btn' onClick={closeSideBar}>
-          <FaTimes />
-        </button>
-      </div>
-      <div className='sidebar-header'>
-        <Link to='/' onClick={handleLinkClick}>
-          Glowna
-        </Link>
-        <Link to='/Results' onClick={handleLinkClick}>
-          Result
-        </Link>
-      </div>
-    </aside>
+    <aside className={`sidebar ${isSideBarOpen ? 'show-sidebar' : ''}`}>
+    <div className='sidebar-header'>
+      <button className='close-btn' onClick={closeSideBar}>
+        <FaTimes className='hover:text-blue-600' />
+      </button>
+    </div>
+    <div className='sidebar-header'>
+      <Link to='/' onClick={handleLinkClick} className='block py-2 px-3 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white'>
+        Główna
+      </Link>
+      <Link to='/Results' onClick={handleLinkClick} className='block py-2 px-3 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white'>
+        Wyszukiwarka
+      </Link>
+    </div>
+  </aside>
+  
   );
 };
 

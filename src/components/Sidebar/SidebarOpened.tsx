@@ -9,7 +9,7 @@ function SidebarOpened() {
  return (
     <div className="Sidebar-btn">
         <button className='sidebar-toggle' onClick={openSideBar}>
-        <FaBars />
+        <FaBars className='hover:text-blue-600'/>
         </button>
     </div>
   );
