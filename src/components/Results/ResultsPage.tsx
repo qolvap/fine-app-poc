@@ -36,8 +36,9 @@ function ResultsPage() {
 
   return (
     <div className="App h-screen grid place-items-center">
+      
       <div className="mb-4">
-        <div className="flex items-center">
+        <div className="flex items-center m-5">
           <input
             type="text"
             placeholder="Wpisz hasło..."
@@ -71,7 +72,7 @@ function ResultsPage() {
         </div>
 
         {(filteredData.length > 0 || !data.some(fine => !fine.description?.includes(term))) ? (
-          <div className="mt-10 grid gap-4 place-items-center">
+          <div className="mt-10 grid gap-4 place-items-center m-5">
             {filteredData.map((fine) => (
               <div key={fine.number} className="border border-blue-300 rounded-md p-4 max-w-[480px] bg-slate-50">
                 <h3 className="text-xl font-semibold mb-2">Taryfikator {fine.guilty}</h3>
@@ -83,7 +84,7 @@ function ResultsPage() {
               </div>
             ))}
           </div>
-        ) : (
+        ) : ( 
           <p className="mt-10 flex flex-col items-center bg-transparent py-0 pl-2 pr-7 text-gray-500">Nie znaleziono</p>
         )}
       </div>
@@ -91,7 +92,7 @@ function ResultsPage() {
       <div className="flex flex-col items-center">
         <h3 className="bg-transparent py-0 pl-2 pr-7 text-gray-500">Źródło: UOTD</h3>
         <br/>
-        <Link to="/" className="mr-4 hover:text-blue-600">Powrót do strony głównej</Link>
+        <Link to="/" className="mr-4 hover:text-blue-600 mb-5">Powrót do strony głównej</Link>
       </div>
 
     </div>
