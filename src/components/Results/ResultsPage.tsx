@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Fine, data } from '../data/data';
 import 'tailwindcss/tailwind.css';
+import Button from '../Button/Button';
 
 function ResultsPage() {
   const [term, setTerm] = useState<string>('');
@@ -62,10 +63,10 @@ function ResultsPage() {
               </option>
             ))}
           </select>
-
+          <Button />
           <button
             onClick={handleFilterButtonClick}
-            className="ml-2 px-4 py-2 bg-blue-600 text-white rounded-md focus:outline-none focus:ring focus:border-indigo-300 hover:text-indigo-600 hover:bg-slate-50 hover:border-2 hover:border-blue-600"
+            className="common-button-style"
           >
             Wyszukaj
           </button>
@@ -74,7 +75,7 @@ function ResultsPage() {
         {(filteredData.length > 0 || !data.some(fine => !fine.description?.includes(term))) ? (
           <div className="mt-10 grid gap-4 place-items-center m-5">
             {filteredData.map((fine) => (
-              <div key={fine.number} className="border border-blue-300 rounded-md p-4 max-w-[480px] bg-slate-50">
+              <div key={fine.number} className="border border-blue-300 rounded-md p-4 max-w-[480px] bg-slate-50 shadow hover:shadow-lg">
                 <h3 className="text-xl font-semibold mb-2">Taryfikator {fine.guilty}</h3>
                 <p><span className="font-semibold">Załącznik:</span> {fine.attachment}</p>
                 <p><span className="font-semibold">Numer w taryfikatorze:</span> {fine.number}</p>

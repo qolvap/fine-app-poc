@@ -44,12 +44,15 @@ function Sidebar() {
         </div>
       ) : (
         // Desktop
-        <div className='sidebar-header flex justify-end m-5'>
-          <Link to='/' onClick={handleLinkClick} className='block py-2 px-3 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white'>
+        <div className='sidebar-header flex justify-center m-5 mb-12'>
+          <Link to='/' onClick={handleLinkClick} className='block py-2 px-3 text-gray-500 hover:text-blue-600 dark:hover:text-white'>
             Główna
           </Link>
-          <Link to='/Results' onClick={handleLinkClick} className='block py-2 px-3 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white'>
+          <Link to='/Results' onClick={handleLinkClick} className='block py-2 px-3 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white'>
             Wyszukiwarka
+          </Link>
+          <Link to='/Contact' onClick={handleLinkClick} className='block py-2 px-3 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white'>
+            Kontakt
           </Link>
         </div>
       )}
