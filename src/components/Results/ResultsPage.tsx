@@ -36,10 +36,9 @@ function ResultsPage() {
   };
 
   return (
-    <div className="App h-screen grid place-items-center">
-      
-      <div className="mb-4">
-        <div className="flex items-center m-5">
+    <div className="flex flex-col min-h-screen items-center justify-between">
+    <div className="mb-4">
+      <div className="flex items-center m-5">
           <input
             type="text"
             placeholder="Wpisz hasło..."
@@ -91,7 +90,12 @@ function ResultsPage() {
       </div>
       
       <div className="flex flex-col items-center">
-        <h3 className="bg-transparent py-0 pl-2 pr-7 text-gray-500">Źródło: UOTD</h3>
+        <p className="bg-transparent py-0 pl-2 pr-7 text-gray-500">Źródło: UOTD</p>
+        <p className="bg-transparent py-0 pl-2 pr-7 text-gray-500">Legenda: 
+        - PN poważne naruszenie
+        - BPN bardzo poważne naruszenie
+        - NN najpoważniejsze naruszenie
+        </p>
         <br/>
         <Link to="/" className="mr-4 hover:text-blue-600 mb-5">Powrót do strony głównej</Link>
       </div>

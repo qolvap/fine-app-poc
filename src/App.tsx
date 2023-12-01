@@ -12,13 +12,15 @@ function App() {
   return (
     <Router>
       <AppProvider>
-        <div className="App">
-          <Sidebar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/Results" element={<ResultsPage />} />
-            <Route path="/Contact" element={<ContactPage />} />
-          </Routes>
+        <div className="App flex flex-col min-h-screen">
+          <div className="flex-grow flex-shrink-0">
+            <Sidebar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/Results" element={<ResultsPage />} />
+              <Route path="/Contact" element={<ContactPage />} />
+            </Routes>
+          </div>
           <Footer />
         </div>
       </AppProvider>
@@ -27,5 +29,6 @@ function App() {
 }
 
 export default App;
+
 
 

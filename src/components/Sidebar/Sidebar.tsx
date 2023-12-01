@@ -28,8 +28,11 @@ function Sidebar() {
                           <Link to='/' onClick={handleLinkClick} className='block py-2 px-3 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white border border-gray-300 rounded-md p-4 mb-5 mr-2'>
                             Główna
                           </Link>
-                          <Link to='/Results' onClick={handleLinkClick} className='block py-2 px-3 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white border border-gray-300 rounded-md p-4 mb-5 mr-5'>
+                          <Link to='/Results' onClick={handleLinkClick} className='block py-2 px-3 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white border border-gray-300 rounded-md p-4 mb-5 mr-2'>
                             Wyszukiwarka
+                          </Link>
+                          <Link to='/Contact' onClick={handleLinkClick} className='block py-2 px-3 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white border border-gray-300 rounded-md p-4 mb-5 mr-5'>
+                            Kontakt
                           </Link>
                     </div>
                 </div>
