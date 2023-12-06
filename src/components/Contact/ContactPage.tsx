@@ -55,7 +55,7 @@ function ContactPage() {
         </div>
 
         <Button />
-        <Link to="/" className="common-button-style mt-4">
+        <Link to="/" className="common-button-style mt-4 mr-5">
           Wyślij
         </Link>
       </form>

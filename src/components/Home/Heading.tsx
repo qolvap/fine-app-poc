@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 
 const Heading = () => {
   return (
-    <div className="my-12 h-[50vh]">
+    <div className="my-12 flex flex-col items-center justify-center h-[50vh]">
       <h2 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         Cały taryfikator w jednym miejscu
       </h2>
