@@ -11,9 +11,7 @@ function HomePage() {
         <Heading />
       </div>
       <Hero />
-      <div className="faq-section">
       <ContactSection />
-      </div>
     </div>
   );
 }

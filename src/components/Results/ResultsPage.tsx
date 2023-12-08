@@ -4,6 +4,20 @@ import { Fine, data } from '../data/data';
 import 'tailwindcss/tailwind.css';
 import Button from '../Button/Button';
 
+function podmien(napis: string): string {
+  return napis
+    .replace(/ę/g, 'e')
+    .replace(/ó/g, 'o')
+    .replace(/ą/g, 'a')
+    .replace(/ś/g, 's')
+    .replace(/ł/g, 'l')
+    .replace(/ż/g, 'z')
+    .replace(/ź/g, 'z')
+    .replace(/ć/g, 'c')
+    .replace(/ń/g, 'n')
+    .toLowerCase();
+}
+
 function ResultsPage() {
   const [term, setTerm] = useState<string>('');
   const [filteredData, setFilteredData] = useState<Fine[]>([]);
@@ -24,16 +38,25 @@ function ResultsPage() {
     }
   };
 
+
+  /**
+ * Handles the filter button click:
+ * 1. Converts the entered term to lowercase and replaces Polish characters.
+ * 2. Filters the data based on a match of the transformed term in fine descriptions.
+ * 3. Updates the state of filteredData and clears the entered term.
+ */
   const handleFilterButtonClick = () => {
-         /*
-      To prevent the error, first check if fine.description is defined before trying to call includes on it.
-      It makes sure that if term is undefined or null, it is treated as an empty string,
-      and the includes method won't throw an error.
-      */ 
-    const filtered = data.filter((fine) => fine.description?.includes(term || ''));
+    const termLower = podmien(term);
+
+    const filtered = data.filter((fine) => {
+      const descriptionLower = podmien(fine.description || '');
+      return descriptionLower.includes(termLower);
+    });
+
     setFilteredData(filtered);
     setTerm('');
   };
+
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-between">
