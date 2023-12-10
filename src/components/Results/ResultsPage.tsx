@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { Fine, data } from '../data/data';
 import 'tailwindcss/tailwind.css';
 import Button from '../Button/Button';
+import FuzzySearch from 'fuzzy-search';
 
+// Function to replace Polish characters and convert a string to lowercase
 function podmien(napis: string): string {
   return napis
     .replace(/ę/g, 'e')
@@ -18,20 +20,18 @@ function podmien(napis: string): string {
     .toLowerCase();
 }
 
+// ResultsPage component with state for term, filteredData, and selectedGuilty
 function ResultsPage() {
   const [term, setTerm] = useState<string>('');
   const [filteredData, setFilteredData] = useState<Fine[]>([]);
-  const [selectedGuilty, setSelectedGuilty] = useState<string>(''); 
+  const [selectedGuilty, setSelectedGuilty] = useState<string>('');
 
-     /*
-    The parameter e is expected to be an event object of type ChangeEvent, 
-    where the event target is an <input> element. 
-    ChangeEvent<HTMLInputElement> syntax used to define the type of the parameter e in a function.
-    */
+  // Handle input change event to update the term state
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTerm(e.target.value);
   };
 
+  // Handle Enter key press event to trigger the filter button click
   const handleEnterKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       handleFilterButtonClick();
@@ -39,29 +39,62 @@ function ResultsPage() {
   };
 
 
-  /**
- * Handles the filter button click:
- * 1. Converts the entered term to lowercase and replaces Polish characters.
- * 2. Filters the data based on a match of the transformed term in fine descriptions.
- * 3. Updates the state of filteredData and clears the entered term.
- */
-  const handleFilterButtonClick = () => {
-    const termLower = podmien(term);
+// Convert the entered term to lowercase and replace Polish characters
+const termLower = podmien(term);
 
-    const filtered = data.filter((fine) => {
-      const descriptionLower = podmien(fine.description || '');
-      return descriptionLower.includes(termLower);
-    });
+// Function to handle exact matches by filtering data based on the description field
+const handleExactMatch = () => {
+  // Filter data for exact matches
+  const exactMatch = data.filter((fine) => {
+    const descriptionLower = podmien(fine.description || '');
+    return descriptionLower.includes(termLower);
+  });
 
-    setFilteredData(filtered);
-    setTerm('');
-  };
+  // If there is an exact match, update the state and return true
+  if (exactMatch.length > 0) {
+    setFilteredData(exactMatch);
+    return true; // Exact match found
+  }
 
+  // No exact match found
+  return false;
+};
+
+// Function to perform fuzzy search using FuzzySearch library
+const handleFuzzySearch = () => {
+  // Create a FuzzySearch instance for data based on the 'description' field
+  const searcher = new FuzzySearch(data, ['description'], {
+    caseSensitive: false,
+    sort: true, // Adjust sensitivity threshold
+  });
+
+  // Perform the fuzzy search based on the user input
+  const filtered = searcher.search(termLower);
+
+  // Update the state with the filtered data
+  setFilteredData(filtered);
+};
+
+// Main function to handle filter button click
+const handleFilterButtonClick = () => {
+  // If the user input is empty, don't perform any filtering
+  if (termLower.trim() === '') {
+    setFilteredData([]);
+  } else {
+    // Check for exact matches and perform fuzzy search if no exact match is found
+    if (!handleExactMatch()) {
+      handleFuzzySearch();
+    }
+  }
+
+  // Clear the entered term
+  setTerm('');
+};
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-between">
-    <div className="mb-4">
-      <div className="flex items-center m-5">
+      <div className="mb-4">
+        <div className="flex items-center m-5">
           <input
             type="text"
             placeholder="Wpisz hasło..."
@@ -122,10 +155,8 @@ function ResultsPage() {
         <br/>
         <Link to="/" className="mr-4 hover:text-blue-600 mb-5">Powrót do strony głównej</Link>
       </div>
-
     </div>
   );
 }
 
 export default ResultsPage;
-
