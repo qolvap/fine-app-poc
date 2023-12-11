@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Fine, data } from '../data/data';
 import 'tailwindcss/tailwind.css';
 import Button from '../Button/Button';
-import FuzzySearch from 'fuzzy-search';
+import Fuse from 'fuse.js';
 
 // Function to replace Polish characters and convert a string to lowercase
 function podmien(napis: string): string {
@@ -38,58 +38,34 @@ function ResultsPage() {
     }
   };
 
+  // Convert the entered term to lowercase and replace Polish characters
+  const termLower = podmien(term);
 
-// Convert the entered term to lowercase and replace Polish characters
-const termLower = podmien(term);
+  // Function to perform fuzzy search using Fuse.js
+  const handleFuseSearch = () => {
+    const fuse = new Fuse(data, {
+      keys: ['description'],
+      ignoreLocation: true,
+      threshold: 0.3,  // the approximate threshold 
+    });
 
-// Function to handle exact matches by filtering data based on the description field
-const handleExactMatch = () => {
-  // Filter data for exact matches
-  const exactMatch = data.filter((fine) => {
-    const descriptionLower = podmien(fine.description || '');
-    return descriptionLower.includes(termLower);
-  });
+    const result = fuse.search(termLower);
+    setFilteredData(result.map((item) => item.item));
+  };
 
-  // If there is an exact match, update the state and return true
-  if (exactMatch.length > 0) {
-    setFilteredData(exactMatch);
-    return true; // Exact match found
-  }
-
-  // No exact match found
-  return false;
-};
-
-// Function to perform fuzzy search using FuzzySearch library
-const handleFuzzySearch = () => {
-  // Create a FuzzySearch instance for data based on the 'description' field
-  const searcher = new FuzzySearch(data, ['description'], {
-    caseSensitive: false,
-    sort: true, // Adjust sensitivity threshold
-  });
-
-  // Perform the fuzzy search based on the user input
-  const filtered = searcher.search(termLower);
-
-  // Update the state with the filtered data
-  setFilteredData(filtered);
-};
-
-// Main function to handle filter button click
-const handleFilterButtonClick = () => {
-  // If the user input is empty, don't perform any filtering
-  if (termLower.trim() === '') {
-    setFilteredData([]);
-  } else {
-    // Check for exact matches and perform fuzzy search if no exact match is found
-    if (!handleExactMatch()) {
-      handleFuzzySearch();
+  // Main function to handle filter button click
+  const handleFilterButtonClick = () => {
+    // If the user input is empty, don't perform any filtering
+    if (termLower.trim() === '') {
+      setFilteredData([]);
+    } else {
+      // Perform Fuse search instead of fuzzy search
+      handleFuseSearch();
     }
-  }
 
-  // Clear the entered term
-  setTerm('');
-};
+    // Clear the entered term
+    setTerm('');
+  };
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-between">
