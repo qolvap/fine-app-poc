@@ -38,19 +38,30 @@ function ResultsPage() {
     }
   };
 
-  // Convert the entered term to lowercase and replace Polish characters
-  const termLower = podmien(term);
-
   // Function to perform fuzzy search using Fuse.js
   const handleFuseSearch = () => {
-    const fuse = new Fuse(data, {
-      keys: ['description'],
+    // Create a Fuse instance with the specified configuration
+    const fuse = new Fuse(filteredGuiltyData(), {
+      keys: ['description', 'guilty'],
       ignoreLocation: true,
-      threshold: 0.3,  // the approximate threshold 
+      threshold: 0.3,
     });
 
+    // Perform the search using the lowercased and normalized term
     const result = fuse.search(termLower);
+
+    // Extract the original data objects from the search results
+    // (Fuse.js returns an array of { item, score, index } objects)
     setFilteredData(result.map((item) => item.item));
+  };
+
+  // Function to filter data based on selected guilty category
+  const filteredGuiltyData = () => {
+    if (selectedGuilty.trim() === '' || selectedGuilty === 'Wszyscy') {
+      return data;
+    } else {
+      return data.filter((fine) => fine.guilty === selectedGuilty);
+    }
   };
 
   // Main function to handle filter button click
@@ -66,6 +77,8 @@ function ResultsPage() {
     // Clear the entered term
     setTerm('');
   };
+
+  const termLower = podmien(term);
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-between">
@@ -87,12 +100,10 @@ function ResultsPage() {
             value={selectedGuilty}
             onChange={(e) => setSelectedGuilty(e.target.value)}
           >
-            <option value="">Taryfikator dla</option>
-            {data.map((fine) => (
-              <option key={fine.number} value={fine.guilty}>
-                {fine.guilty}
-              </option>
-            ))}
+            <option value="">Taryfikator</option>
+            <option value="kierowcy">Taryfikator Kierowcy</option>
+            <option value="zarządzający">Taryfikator Zarządzającego</option>
+            <option value="przedsiębiorcy">Taryfikator Przedsiębiorcy</option>
           </select>
           <Button />
           <button
@@ -103,33 +114,55 @@ function ResultsPage() {
           </button>
         </div>
 
-        {(filteredData.length > 0 || !data.some(fine => !fine.description?.includes(term))) ? (
+        {(filteredData.length > 0 || !filteredGuiltyData().some(fine => !fine.description?.includes(term))) ? (
           <div className="mt-10 grid gap-4 place-items-center m-5">
             {filteredData.map((fine) => (
-              <div key={fine.number} className="border border-blue-300 rounded-md p-4 max-w-[480px] bg-slate-50 shadow hover:shadow-lg">
-                <h3 className="text-xl font-semibold mb-2">Taryfikator {fine.guilty}</h3>
-                <p><span className="font-semibold">Załącznik:</span> {fine.attachment}</p>
-                <p><span className="font-semibold">Numer w taryfikatorze:</span> {fine.number}</p>
-                <p><span className="font-semibold">Opis:</span> {fine.description}</p>
-                <p><span className="font-semibold">Grzywna:</span> {fine.fine}zł</p>
-                <p><span className="font-semibold">Poziom naruszenia:</span> {Array.isArray(fine.group) ? fine.group.join(', ') : fine.group}</p>
+              <div
+                key={fine.number}
+                className="border border-blue-300 rounded-md p-4 max-w-[480px] bg-slate-50 shadow hover:shadow-lg"
+              >
+                <h3 className="text-xl font-semibold mb-2">
+                  Taryfikator {fine.guilty}
+                </h3>
+                <p>
+                  <span className="font-semibold">Załącznik:</span> {fine.attachment}
+                </p>
+                <p>
+                  <span className="font-semibold">Numer w taryfikatorze:</span>{' '}
+                  {fine.number}
+                </p>
+                <p>
+                  <span className="font-semibold">Opis:</span> {fine.description}
+                </p>
+                <p>
+                  <span className="font-semibold">Grzywna:</span> {fine.fine}zł
+                </p>
+                <p>
+                  <span className="font-semibold">Poziom naruszenia:</span>{' '}
+                  {Array.isArray(fine.group)
+                    ? fine.group.join(', ')
+                    : fine.group}
+                </p>
               </div>
             ))}
           </div>
-        ) : ( 
-          <p className="mt-10 flex flex-col items-center bg-transparent py-0 pl-2 pr-7 text-gray-500">Nie znaleziono</p>
+        ) : (
+          <p className="mt-10 flex flex-col items-center bg-transparent py-0 pl-2 pr-7 text-gray-500">
+            Nie znaleziono
+          </p>
         )}
       </div>
-      
+
       <div className="flex flex-col items-center">
         <p className="bg-transparent py-0 pl-2 pr-7 text-gray-500">Źródło: UOTD</p>
-        <p className="bg-transparent py-0 pl-2 pr-7 text-gray-500">Legenda: 
-        - PN poważne naruszenie
-        - BPN bardzo poważne naruszenie
-        - NN najpoważniejsze naruszenie
+        <p className="bg-transparent py-0 pl-2 pr-7 text-gray-500">
+          Legenda: - PN poważne naruszenie - BPN bardzo poważne naruszenie - NN
+          najpoważniejsze naruszenie
         </p>
-        <br/>
-        <Link to="/" className="mr-4 hover:text-blue-600 mb-5">Powrót do strony głównej</Link>
+        <br />
+        <Link to="/" className="mr-4 hover:text-blue-600 mb-5">
+          Powrót do strony głównej
+        </Link>
       </div>
     </div>
   );
