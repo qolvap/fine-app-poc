@@ -83,36 +83,38 @@ function ResultsPage() {
   return (
     <div className="flex flex-col min-h-screen items-center justify-between">
       <div className="mb-4">
-        <div className="flex items-center m-5">
-          <input
-            type="text"
-            placeholder="Wpisz hasło..."
-            value={term}
-            onChange={handleInputChange}
-            onKeyDown={handleEnterKeyPress}
-            className="block w-1/2 rounded-md border-0 py-1.5 pl-7 pr-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-slate-50"
-          />
+      <div className="flex items-center flex-col m-5">
+            <input
+              type="text"
+              placeholder="Wpisz hasło..."
+              value={term}
+              onChange={handleInputChange}
+              onKeyDown={handleEnterKeyPress}
+              className="block w-full rounded-md border-0 py-1.5 pl-7 pr-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-slate-50 mb-2"
+            />
+            <div className="flex">
+              <select
+                id="guilty"
+                name="guilty"
+                className="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm mr-2"
+                value={selectedGuilty}
+                onChange={(e) => setSelectedGuilty(e.target.value)}
+              >
+                <option value="">Taryfikator</option>
+                <option value="kierowcy">Taryfikator Kierowcy</option>
+                <option value="zarządzający">Taryfikator Zarządzającego</option>
+                <option value="przedsiębiorcy">Taryfikator Przedsiębiorcy</option>
+              </select>
+              <Button />
+              <button
+                onClick={handleFilterButtonClick}
+                className="common-button-style"
+              >
+                Wyszukaj
+              </button>
+            </div>
+          </div>
 
-          <select
-            id="guilty"
-            name="guilty"
-            className="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-            value={selectedGuilty}
-            onChange={(e) => setSelectedGuilty(e.target.value)}
-          >
-            <option value="">Taryfikator</option>
-            <option value="kierowcy">Taryfikator Kierowcy</option>
-            <option value="zarządzający">Taryfikator Zarządzającego</option>
-            <option value="przedsiębiorcy">Taryfikator Przedsiębiorcy</option>
-          </select>
-          <Button />
-          <button
-            onClick={handleFilterButtonClick}
-            className="common-button-style"
-          >
-            Wyszukaj
-          </button>
-        </div>
 
         {(filteredData.length > 0 || !filteredGuiltyData().some(fine => !fine.description?.includes(term))) ? (
           <div className="mt-10 grid gap-4 place-items-center m-5">
