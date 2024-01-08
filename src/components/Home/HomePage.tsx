@@ -1,8 +1,8 @@
 import React from 'react';
 import 'tailwindcss/tailwind.css';
-import Heading from './Heading';
 import Hero from './Hero';
 import ContactSection from './ContactSection';
+import Heading from './Heading';
 
 function HomePage() {
   return (
