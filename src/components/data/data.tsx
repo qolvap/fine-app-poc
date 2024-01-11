@@ -474,8 +474,7 @@ export const data = [
       2) nieprzestrzeganie zakazów transportowych zwierząt uzależnione od wagi, wieku i gatunku oraz zdolności zwierząt do transportu
       3) niestosowanie rozdzielania zwierząt
       4) niezapewnienie wymaganej dla poszczególnych gatunków zwierząt wielkości powierzchni ładunkowej lub gęstości załadunku
-      5) niewłaściwe wykonywanie obowiązków związanych z obsługą zwierząt, w tym niewłaściwe wykonywanie postojów i odpoczynków dla zwierząt, pojenie, karmienie, dojenie. 
-      Kara może sięgać: 500 zł za każde naruszenie nie więcej niż 1000 zł`, 
+      5) niewłaściwe wykonywanie obowiązków związanych z obsługą zwierząt, w tym niewłaściwe wykonywanie postojów i odpoczynków dla zwierząt, pojenie, karmienie, dojenie. Kara może sięgać: 500 zł za każde naruszenie nie więcej niż 1000 zł`, 
       fine: 500,
       group: ["12.1BPN", "12.4BPN"]
       },    
@@ -1814,8 +1813,294 @@ export const data = [
       guilty: "przedsiębiorcy",
       attachment: 3,
       number: "6.3.14",
-      description: "Nieumieszczenie na wykresówce lub wydruku wymaganych wpisów lub umieszczenie na wykresówce lub wydruku nieczytelnych wpisów ręcznych. Kara 50 za każdy brak wpisu", 
+      description: "Nieumieszczenie na wykresówce lub wydruku wymaganych wpisów lub umieszczenie na wykresówce lub wydruku nieczytelnych wpisów ręcznych. Kara 50 za każdy brak wpisu, nie więcej niż 500 za jedną wykresówkę lub jeden wydruk", 
       fine: 50,
       group: ["2.17BPN"] 
    },  
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "6.3.15",
+      description: "Nieprzechowywanie przez co najmniej rok wykresówek, wydruków oraz pobranych danych lub dokumentów potwierdzających fakt nieprowadzenia pojazdu – za każdy dzień w odniesieniu do każdego kierowcy", 
+      fine: 500,
+      group: ["2.11BPN", "2.12BPN"] 
+   },  
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "6.3.16",
+      description: "Nieudostępnienie podczas kontroli w przedsiębiorstwie wykresówek oraz pobranych i przechowywanych danych z karty kierowcy i tachografu cyfrowego – za każdy dzień w odniesieniu do każdego kierowcy", 
+      fine: 500,
+      group: ["2.12BPN"] 
+   },  
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "6.3.17",
+      description: "Naruszenie obowiązku terminowego pobierania danych z karty kierowcy – za każdego kierowcę", 
+      fine: 500,
+      group: "brak"  
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "6.3.18",
+      description: "Naruszenie obowiązku terminowego pobierania danych z tachografu – za każdy pojazd", 
+      fine: 500,
+      group: "brak"  
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "6.3.19",
+      description: "Niepoprawne stosowanie wykresówek lub karty kierowcy, z wyjątkiem przypadków, o których mowa w lp. 6.3.1–6.3.10 i 6.3.14", 
+      fine: 500,
+      group: ["2.13BPN"] 
+   }, 
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "7.1",
+      description: "Samowolna zmiana wskazań przyrządów pomiarowych zainstalowanych w pojeździe przy wykonywaniu transportu drogowego taksówką", 
+      fine: 2000,
+      group: "brak"  
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "8.1",
+      description: "Wykonywanie przewozu zwierząt przez przewoźnika nieposiadającego odpowiedniego zezwolenia", 
+      fine: 6000,
+      group: ["12.5PN"] 
+   }, 
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "8.2",
+      description: `Przewóz zwierząt niezgodnie z przepisami technicznymi zawartymi w załączniku I do rozporządzenia Rady (WE) nr 1/200516) w zakresie przestrzegania warunków przewozu zwierząt:
+      1) stosowanie czynów zabronionych wobec zwierząt
+      2) nieprzestrzeganie zakazów transportowych zwierząt uzależnione od wagi, wieku i gatunku oraz zdolności zwierząt do transportu
+      3) niestosowanie rozdzielania zwierząt
+      4) niezapewnienie wymaganej dla poszczególnych gatunków zwierząt wielkości powierzchni ładunkowej lub gęstości załadunku
+      5) niewłaściwe wykonywanie obowiązków związanych z obsługą zwierząt, w tym niewłaściwe wykonywanie postojów i odpoczynków dla zwierząt, pojenie, karmienie, dojenie
+      Kara może sięgać: 1000 za każde naruszenie, nie więcej niż 5000`, 
+      fine: 1000,
+      group: "brak"  
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "8.3",
+      description: "Niezapewnienie przez przewoźnika transportowanym zwierzętom ogólnych warunków transportu zwierząt, o których mowa w art. 3 rozporządzenia Rady (WE) nr 1/2005, w sytuacjach gdy podmiot wykonujący przewóz jest obowiązany jedynie do stosowania tego art. 3", 
+      fine: 1000,
+      group: "brak"  
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "8.4",
+      description: "Wykonywanie długotrwałego przewozu zwierząt z naruszeniem przepisów dotyczących posiadania w pojeździe świadectwa zdrowia", 
+      fine: 2000,
+      group: "brak"  
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "8.5",
+      description: "Wykonywanie przewozu zwierząt z naruszeniem przepisów dotyczących identyfikacji i rejestracji zwierząt", 
+      fine: 1000,
+      group: "brak"  
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "8.6",
+      description: "Transport zwierząt środkiem transportu nieprzystosowanym do przewozu danego gatunku zwierząt lub niedopuszczonym przez właściwy organ", 
+      fine: 1000,
+      group: ["12.4PN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "8.7",
+      description: `Wykonywanie przewozu zwierząt z naruszeniem warunków dotyczących obsługiwania środków transportu i urządzeń załadunkowych określonych w przepisach rozporządzenia Rady (WE) nr 1/200516) w zakresie:
+      1) stosowania systemu nawigacji w długotrwałych przewozach zwierząt
+      2) oznakowania środka transportu
+      3) sprawności systemów i urządzeń zainstalowanych w środku transportu
+      4) stosowania podziałów i przegród dla zwierząt
+      5) wyposażenia w wodę i karmę oraz w ściółkę dla zwierząt
+      6) zminimalizowania wycieku ekskrementów z pojazdu
+      7) wymogów dla urządzeń załadunkowych
+      Kara może sięgać: 500 za każde naruszenie nie więcej niż 2000`, 
+      fine: 500,
+      group: ["12.1 (w zakresie pkt 4 – BPN)", "12.2 (w zakresie pkt 7 – PN)", "12.3 (w zakresie pkt 7 – PN)"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "8.8",
+      description: "Wykonywanie przewozu bez przeprowadzenia czyszczenia i odkażania pojazdu po każdym przewozie zwierząt lub produktu mogącego mieć wpływ na zdrowie zwierząt i nieokazanie dokumentacji potwierdzającej wykonanie tych czynności", 
+      fine: 500,
+      group: "brak"  
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "9.1",
+      description: "Wykonywanie przewozu drogowego pojazdem nieposiadającym aktualnego okresowego badania technicznego potwierdzającego jego zdatność do ruchu drogowego – za każdy pojazd", 
+      fine: 2000,
+      group: ["5.1NN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "9.2",
+      description: "Wykonywanie przewozu drogowego pojazdem posiadającym usterkę lub usterki układu hamulcowego, połączeń układu kierowniczego, kół, opon, zawieszenia, podwozia lub innego wyposażenia, zakwalifikowane jako niebezpieczne – za każdy pojazd", 
+      fine: 2000,
+      group: ["5.2NN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.1",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 3,5 t do 12 t, których dopuszczalna masa całkowita została przekroczona mniej niż 5%", 
+      fine: 500,
+      group: "brak"
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.1",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 3,5 t do 12 t, których dopuszczalna masa całkowita została przekroczona co najmniej 5% i mniej niż 15%", 
+      fine: 1000,
+      group: ["4.4PN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.1",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 3,5 t do 12 t, których dopuszczalna masa całkowita została przekroczona co najmniej 15% i mniej niż 25% ", 
+      fine: 2000,
+      group: ["4.5BPN"] 
+   },   
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.1",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 3,5 t do 12 t, których dopuszczalna masa całkowita została przekroczona co najmniej 25% ", 
+      fine: 5000,
+      group: ["4.6NN"] 
+   },   
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.2",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 12 t, których dopuszczalna masa całkowita została przekroczona mniej niż 5%", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.2",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 12 t, których dopuszczalna masa całkowita została przekroczona co najmniej 5% i mniej niż 10%", 
+      fine: 2000,
+      group: ["4.1PN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.2",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 12 t, których dopuszczalna masa całkowita została przekroczona co najmniej 10% i mniej niż 20% ", 
+      fine: 5000,
+      group: ["4.2BPN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.2",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 12 t, których dopuszczalna masa całkowita została przekroczona co najmniej 20% ", 
+      fine: 10000,
+      group: ["4.3NN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.3",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów, których dopuszczalna długość została przekroczona do 2%", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.3",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów, których dopuszczalna długość została przekroczona powyżej 2% do mniej niż 20%", 
+      fine: 2000,
+      group: ["4.7PN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.3",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów, których dopuszczalna długość została przekroczona od 20%", 
+      fine: 5000,
+      group: ["4.8BPN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.4",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów, których dopuszczalna szerokość została przekroczona powyżej wartości dopuszczalnej do wartości mniejszej niż 2,65 m", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.4",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów, których dopuszczalna szerokość została przekroczona od wartości 2,65 do wartości mniejszej niż 3,10 m", 
+      fine: 2000,
+      group: ["4.9PN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.4",
+      description: "Dopuszczenie do wykonywania przewozu drogowego pojazdem lub zespołem pojazdów, których dopuszczalna szerokość została przekroczona od wartości 3,10 m", 
+      fine: 5000,
+      group: ["4.10BPN"] 
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.5",
+      description: "Dopuszczenie do wykonywania międzynarodowego przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 2,5 t do 3,5 t, których dopuszczalna masa całkowita została przekroczona mniej niż 5%", 
+      fine: 500,
+      group: "brak"
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.5",
+      description: "Dopuszczenie do wykonywania międzynarodowego przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 2,5 t do 3,5 t, których dopuszczalna masa całkowita została przekroczona co najmniej 5% i mniej niż 10%", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.5",
+      description: "Dopuszczenie do wykonywania międzynarodowego przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 2,5 t do 3,5 t, których dopuszczalna masa całkowita została przekroczona co najmniej 10% i mniej niż 20% ", 
+      fine: 1500,
+      group: "brak"
+   },
+   {
+      guilty: "przedsiębiorcy",
+      attachment: 3,
+      number: "10.5",
+      description: "Dopuszczenie do wykonywania międzynarodowego przewozu drogowego pojazdem lub zespołem pojazdów o dopuszczalnej masie całkowitej powyżej 2,5 t do 3,5 t, których dopuszczalna masa całkowita została przekroczona co najmniej 20%", 
+      fine: 2000,
+      group: "brak"
+   },
     ];
