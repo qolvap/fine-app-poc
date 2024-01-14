@@ -2103,4 +2103,324 @@ export const data = [
       fine: 2000,
       group: "brak"
    },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "1.1",
+      description: "Niewyposażenie kierowcy w wypis z zezwolenia na wykonywanie zawodu przewoźnika drogowego", 
+      fine: 500,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "1.2",
+      description: "Niewyposażenie kierowcy w wypis z licencji", 
+      fine: 500,
+      group: ["10.2BPN", "11.2BPN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "1.3",
+      description: "Niewyposażenie kierowcy w wypis z zezwolenia innego niż w lp. 1.1 i 1.4.", 
+      fine: 500,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "1.4",
+      description: "Niewyposażenie kierowcy w wypis z zezwolenia na wykonywanie regularnych przewozów osób w międzynarodowym transporcie drogowym lub wypis z zezwolenia na wykonywanie regularnych specjalnych przewozów osób w międzynarodowym transporcie drogowym", 
+      fine: 500,
+      group: ["11.4PN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "1.5",
+      description: "Niewyposażenie kierowcy w wypis z zaświadczenia na przewozy drogowe na potrzeby własne", 
+      fine: 500,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "1.6",
+      description: "Niewyposażenie kierowcy w świadectwo kierowcy ", 
+      fine: 500,
+      group: ["10.4PN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "1.7",
+      description: "Niewyposażenie kierowcy w  inny dokument, o którym mowa w art. 87 ustawy o transporcie drogowym, wymagany w związku z realizowanym przewozem – za każdy dokument", 
+      fine: 500,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "2",
+      description: "Niewyposażenie kierowcy lub osoby obsługującej w rozumieniu art. 2 lit. c rozporządzenia Rady (WE) nr 1/2005 w dokumenty wymagane przy przewozie danego gatunku zwierząt określone w przepisach tego rozporządzenia – za każdy dokument", 
+      fine: 500,
+      group: ["12.5PN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "3",
+      description: "Nieprawidłowe, niepełne lub niezgodne ze stanem faktycznym wypełnienie dokumentu, o którym mowa w art. 87 ustawy o transporcie drogowym, wymaganego w związku z realizowanym przewozem – za każdy dokument", 
+      fine: 300,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "4.1",
+      description: "Wykonywanie przewozu drogowego przez kierowcę, który  nie uzyskał kwalifikacji wstępnej lub nie ukończył szkolenia okresowego", 
+      fine: 1500,
+      group: ["7.1BPN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "4.2",
+      description: "Wykonywanie przewozu drogowego przez kierowcę, który nie posiada orzeczenia lekarskiego o braku przeciwwskazań zdrowotnych do wykonywania pracy na stanowisku kierowcy", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "4.3",
+      description: "Wykonywanie przewozu drogowego przez kierowcę, który nie posiada orzeczenia psychologicznego o braku przeciwwskazań psychologicznych do wykonywania pracy na stanowisku kierowcy", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "4.4",
+      description: "Wykonywanie przewozu drogowego przez kierowcę, który nie posiada ważnego prawa jazdy odpowiedniej kategorii wymaganego dla danego rodzaju pojazdu lub zespołu pojazdów", 
+      fine: 500,
+      group: ["8.1NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "4.5",
+      description: "Wykonywanie przewozu drogowego przez kierowcę, który nie posiada ważnej karty kierowcy", 
+      fine: 500,
+      group: ["2.4NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "4.6",
+      description: "Wykonywanie przewozu drogowego przez kierowcę, który korzysta z prawa jazdy, które jest uszkodzone lub nieczytelne lub niezgodne ze wspólnym wzorem", 
+      fine: 500,
+      group: ["8.2PN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "4.7",
+      description: "Wykonywanie przewozu drogowego przez kierowcę, który posługuje się kartą kierowcy, która została wydana na podstawie fałszywych oświadczeń lub podrobionych lub przerobionych dokumentów", 
+      fine: 500,
+      group: ["2.6NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "4.8",
+      description: "Wykonywanie przewozu drogowego przez kierowcę, który nie posiada wieku wymaganego dla wykonywanego przewozu", 
+      fine: 500,
+      group: ["1.1PN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "5",
+      description: "Wykonywanie przewozu drogowego zwierząt przez kierowcę lub osobę obsługującą w rozumieniu art. 2 lit. c rozporządzenia 1/2005, która nie posiada kwalifikacji do transportu zwierząt, potwierdzonych przez właściwy organ", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "6",
+      description: "Niewyznaczenie osoby odpowiedzialnej za transport zwierząt", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "7",
+      description: "Niewyznaczenie osoby obsługującej w rozumieniu art. 2 lit. c rozporządzenia Rady (WE) nr 1/2005 dla każdej partii zwierząt", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "8",
+      description: "Długotrwały przewóz domowych gatunków nieparzystokopytnych innych niż zarejestrowane nieparzystokopytne, bydła, owiec, kóz i świń bez sporządzenia dziennika podróży", 
+      fine: 1000,
+      group: ["12.5PN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "9",
+      description: "Długotrwały przewóz domowych gatunków nieparzystokopytnych innych niż zarejestrowane nieparzystokopytne, bydła, owiec, kóz i świń z nieprawidłowo sporządzonym dziennikiem podróży", 
+      fine: 200,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "10",
+      description: "Przekroczenie przez kierowcę czasu przewozu danego gatunku zwierząt powyżej 2 godzin", 
+      fine: 500,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "11",
+      description: "Przekroczenie przez kierowcę dopuszczalnego tygodniowego czasu prowadzenia pojazdu o co najmniej 14 godzin", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "12",
+      description: "Przekroczenie przez kierowcę dopuszczalnego dwutygodniowego czasu prowadzenia pojazdu o co najmniej 23 godziny", 
+      fine: 1500,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "13",
+      description: "Skrócenie przez kierowcę odpoczynku dobowego o czas równy lub większy niż 4 godziny i 30 minut", 
+      fine: 500,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "14",
+      description: "Przekroczenie przez kierowcę dozwolonego maksymalnego dziennego czasu prowadzenia pojazdu o czas powyżej 6 godzin i 45 minut", 
+      fine: 500,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "14a",
+      description: "Organizacja pracy uniemożliwiająca wykorzystanie przez kierowcę regularnego tygodniowego okresu odpoczynku lub dowolnego tygodniowego okresu odpoczynku trwającego ponad 45 godzin wykorzystywanego jako rekompensata za skrócone tygodniowe okresy odpoczynku w miejscu zakwaterowania wyposażonym w odpowiednią infrastrukturę noclegową i sanitarną", 
+      fine: 50,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "15.1",
+      description: "Wykonywanie przewozu drogowego pojazdem nieposiadającym ważnego aktualnego badania technicznego potwierdzającego jego zdatność do ruchu drogowego", 
+      fine: 200,
+      group: ["5.1NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "15.2",
+      description: "Wykonywanie przewozu drogowego pojazdem posiadającym usterkę lub usterki układu hamulcowego, połączeń układu kierowniczego, kół, opon, zawieszenia, podwozia lub innego wyposażenia, zakwalifikowane jako niebezpieczne", 
+      fine: 500,
+      group: ["5.2NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "15.3",
+      description: "Wykonywanie przewozu drogowego pojazdem niewyposażonym w wymagany tachograf posiadający świadectwo homologacji typu", 
+      fine: 2000,
+      group: ["2.1NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "15.4",
+      description: "Wykonywanie przewozu drogowego pojazdem  który nie posiada ogranicznika prędkości lub w którym ogranicznik prędkości został odłączony", 
+      fine: 2000,
+      group: ["6.1NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "15.5",
+      description: "Wykonywanie przewozu drogowego pojazdem z zainstalowanym ogranicznikiem prędkości niespełniającym stosownych wymogów technicznych, określonych w procedurze homologacji typu przedmiotu wyposażenia lub części", 
+      fine: 1000,
+      group: ["6.2BPN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "15.6",
+      description: "Wykonywanie przewozu drogowego pojazdem z zainstalowanym ogranicznikiem prędkości, który nie został zamontowany przez producenta lub jednostkę przez niego upoważnioną", 
+      fine: 500,
+      group: ["6.3PN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "15.7",
+      description: "Wykonywanie przewozu drogowego pojazdem z zainstalowanym nielegalnym urządzeniem, które może fałszować dane w ograniczniku prędkości lub z zainstalowanym niehomologowanym ogranicznikiem prędkości", 
+      fine: 2000,
+      group: ["6.4NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "16",
+      description: "Korzystanie przez kierowcę z niedozwolonego urządzenia lub przedmiotu wykonanego lub przeznaczonego do celów podrabiania lub przerabiania danych rejestrowanych przez tachograf", 
+      fine: 2000,
+      group: ["2.9NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "17",
+      description: "Wykonywanie przewozu drogowego towarów niebezpiecznych niedopuszczonych do przewozu towarów lub które są przewożone w sposób zakazany lub bez oznakowania ich w pojeździe jako towary niebezpieczne", 
+      fine: 2000,
+      group: ["9.1NN", "9.2NN", "9.3NN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "18",
+      description: "Wykonywanie przewozu drogowego w czasie obowiązywania ograniczeń oraz zakazów ruchu niektórych rodzajów pojazdów na drogach", 
+      fine: 1000,
+      group: "brak"
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "19",
+      description: "Brak organizacji pracy kierowcy lub nieprawidłowa organizacja, brak poleceń lub niewłaściwe polecenia dla kierowcy – w zakresie umożliwienia kierowcom przestrzegania przepisów rozporządzenia (WE) nr 561/20064)", 
+      fine: 1500,
+      group: ["1.33BPN"]
+   },
+   {
+      guilty: "zarządzający",
+      attachment: 4,
+      number: "20",
+      description: "Niedokumentowanie, nieprzechowywanie w lokalu przedsiębiorstwa lub nieokazanie do kontroli dokumentów potwierdzających spełnienie obowiązku, o którym mowa w art. 8 ust. 8a rozporządzenia (WE) nr 561/20064) – za każdego kierowcę", 
+      fine: 50,
+      group: "brak"
+   },
     ];
