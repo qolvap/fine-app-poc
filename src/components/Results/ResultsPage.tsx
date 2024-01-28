@@ -5,6 +5,17 @@ import 'tailwindcss/tailwind.css';
 import Button from '../Button/Button';
 import Fuse from 'fuse.js';
 
+const content = [
+  {
+    text: 'Źródło: UOTD',
+    link: 'https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20011251371/U/D20011371Lj.pdf',
+  },
+  { text: 'Legenda: ' },
+  { text: 'PN poważne naruszenie' },
+  { text: 'BPN bardzo poważne naruszenie' },
+  { text: 'NN najpoważniejsze naruszenie' },
+];
+
 // Function to replace Polish characters and convert a string to lowercase
 function podmien(napis: string): string {
   return napis
@@ -156,15 +167,29 @@ function ResultsPage() {
       </div>
 
       <div className="flex flex-col items-center">
-        <p className="bg-transparent py-0 pl-2 pr-7 text-gray-500">Źródło: UOTD</p>
-        <p className="bg-transparent py-0 pl-2 pr-7 text-gray-500">
-          Legenda: - PN poważne naruszenie - BPN bardzo poważne naruszenie - NN
-          najpoważniejsze naruszenie
-        </p>
-        <br />
-        <Link to="/" className="mr-4 hover:text-blue-600 mb-5">
-          Powrót do strony głównej
-        </Link>
+          {content.map((item, index) => (
+              <p
+                key={index}
+                className="bg-transparent py-0 pl-2 pr-7 text-gray-500"
+              >
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-500"
+                  >
+                    {item.text}
+                  </a>
+                ) : (
+                  item.text
+                )}
+              </p>
+            ))}
+            <br />
+            <Link to="/" className="mr-4 hover:text-blue-600 mb-5">
+              Powrót do strony głównej
+            </Link>
       </div>
     </div>
   );
