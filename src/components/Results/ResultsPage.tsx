@@ -55,7 +55,7 @@ function ResultsPage() {
     const fuse = new Fuse(filteredGuiltyData(), {
       keys: ['description', 'guilty'],
       ignoreLocation: true,
-      threshold: 0.3,
+      threshold: 0.1,
     });
 
     // Perform the search using the lowercased and normalized term
