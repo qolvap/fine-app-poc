@@ -1,6 +1,7 @@
 {
   "name": "fine",
   "version": "0.1.0",
+  "homepage": "https://qolvap.github.io/sprawdzkarydlakierowcyprzedsiebiorcyzarzadzajacego/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -36,7 +37,9 @@
     "start": "npm run build:css && react-scripts start",
     "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
