@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';
 import HomePage from './components/Home/HomePage';
 import ResultsPage from './components/Results/ResultsPage';
@@ -19,6 +19,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/Results" element={<ResultsPage />} />
               <Route path="/Contact" element={<ContactPage />} />
+              <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </div>
           <Footer />
