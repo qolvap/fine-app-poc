@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fine-app-poc/static/css/main.29a77f07.css",
+    "main.js": "/fine-app-poc/static/js/main.e981386f.js",
+    "index.html": "/fine-app-poc/index.html",
+    "main.29a77f07.css.map": "/fine-app-poc/static/css/main.29a77f07.css.map",
+    "main.e981386f.js.map": "/fine-app-poc/static/js/main.e981386f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29a77f07.css",
+    "static/js/main.e981386f.js"
+  ]
+}

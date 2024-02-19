@@ -1,21 +1,25 @@
 {
-    "manifest_version": 2,
-    "name": "Transportation Fines Extension",
-    "description": "PL fine search",
-    "version": "1.1",
-    "icons": {
-        "128": "128.png"
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     },
-    "app": {
-        "urls": [
-            "http://certification.googleapps.com/app-info/"
-        ],
-        "launch": {
-            "web_url": "http://certification.googleapps.com/"
-        }
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
     },
-    "permissions": [
-        "unlimitedStorage",
-        "notifications"
-    ]
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
